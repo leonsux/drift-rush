@@ -1,6 +1,6 @@
 # Drift Rush
 
-基于 Three.js、TypeScript、Vite 的电脑浏览器 3D 街机竞速原型。一辆原创赛车、一张约 1.06 km 的海岸环线，每场三圈。
+基于 Three.js、TypeScript、Vite 的电脑浏览器 3D 街机竞速原型。一辆原创赛车、一张约 1.06 km 的海岸环线，每场三圈。源代码托管于[公开 GitHub 仓库](https://github.com/leonsux/drift-rush)。
 
 ## 启动
 
