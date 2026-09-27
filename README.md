@@ -15,9 +15,12 @@ npm run dev
 
 ```powershell
 npm test          # 驾驶、碰撞、喷气及三圈路线测试
-npm run build    # TypeScript 检查及 dist/ 生产构建
+npm run build    # TypeScript 检查及本地 dist/ 生产构建
+npm run build:pages  # 使用 /drift-rush/ 子路径构建 GitHub Pages
 npm run preview  # 本地预览生产构建，端口 4173
 ```
+
+推送到 `main` 会自动使用 GitHub Actions 构建 `dist/` 并部署到 [GitHub Pages](https://leonsux.github.io/drift-rush/)。部署工作流位于 `.github/workflows/pages.yml`。此项目托管在用户／组织页面下的 `/drift-rush/` 子路径，GitHub Pages 部署构建会为静态资源添加此前缀。
 
 ## 操作
 

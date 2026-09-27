@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-第一版原型已实现，源代码托管于 [GitHub 公开仓库](https://github.com/leonsux/drift-rush)，默认分支为 `main`。本地试玩地址为 <http://127.0.0.1:5173/>；启动与按键见 [README.md](README.md)。
+第一版原型已实现，源代码托管于 [GitHub 公开仓库](https://github.com/leonsux/drift-rush)，默认分支为 `main`；GitHub Pages 地址为 <https://leonsux.github.io/drift-rush/>。本地试玩地址为 <http://127.0.0.1:5173/>；启动与按键见 [README.md](README.md)。
 
 ## 最近完成
 
@@ -12,6 +12,7 @@
 - 2026-09-27 01:46：完成倒计时、暂停恢复、失焦暂停、快速重开、响应式界面和可选 WebMCP 状态读取／暂停接口；增加 E 作为氮气备用键。
 - 2026-09-27 01:46：通过回归测试定位并修复喷气结束后持续加速导致速度回落过慢的问题，修正终点检查与可视终点位置对齐。
 - 2026-09-27 01:54：按授权在 `leonsux/drift-rush` 创建公开 GitHub 仓库，配置 `origin` 远端；首版实现及 12 项测试由 `c7db3a2` 版本提交记录。
+- 2026-09-27 19:14：查明 GitHub Pages 从仓库根目录直接发布源代码，浏览器拿到未构建的 Vite `src/main.ts` 并返回 404；加入适配 `/drift-rush/` 的生产构建命令和 GitHub Actions 发布工作流。
 
 ## 最近验证
 
@@ -20,10 +21,12 @@
 - 2026-09-27 01:46：内置浏览器检查 1366 × 768 与 390 × 844 布局；窄屏无横向溢出，开始按钮在视口内，显示电脑键盘提示。画面证据位于 `.tmp/verification/desktop.png`、`.tmp/verification/mobile.png`。
 - 2026-09-27 01:46：浏览器确认 Enter 启动、倒计时、计时、Ctrl／E 氮气消耗、音效开关、R 重开。音频上下文为 `running`，未发现浏览器 error 日志。运行状态样本见 `.tmp/verification/runtime.json`。
 - 2026-09-27 01:46：通过真实浏览器 WebMCP 接口验证暂停使计时保持不变，继续后恢复；无效 `paused` 参数会报错并保持原状态。
+- 2026-09-27 19:14：`npm run build:pages` 通过 TypeScript 检查和生产构建；检查 `dist/index.html` 所引用的 `/drift-rush/favicon.svg`、JS 和 CSS 文件均存在。`npm test` 的 12 项回归测试仍通过。
 
 ## 验证边界与下一步
 
 - 音效已验证初始化和触发链路，尚未进行人工耳机／扬声器试听；不将启动成功视为听感验收。
 - 连续漂移与完整三圈目前由规则测试和自动路线模拟验证，尚未完成持续按键的人工驾驶体验验收。下一步根据试玩反馈调节转向、抓地力、小喷衔接、镜头和声音。
+- GitHub Pages 工作流已加入，但生产部署仍需等待 GitHub Actions 执行完成后再确认线上页面。
 - 当前面向电脑键盘，手机仅检查布局，没有触屏驾驶功能。
 - 联机、车辆改装与额外赛道不属于首版。
